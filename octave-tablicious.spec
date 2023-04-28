@@ -1,15 +1,17 @@
 %global octpkg tablicious
 
 Summary:	A table (relational, tabular data) implementation for GNU Octave 
-Name:		octave-%{octpkg}
+Name:		octave-tablicious
 Version:	0.3.6
-Release:	1
-Url:		https://github.com/apjanke/octave-%{octpkg}
-Source0:	%{url}/archive/v%{version}/%{octpkg}-%{version}.tar.gz
+Release:	2
 License:	GPLv3+
 Group:		Sciences/Mathematics
-
-BuildRequires:	octave-devel >= 3.6.0
+#Url:		https://packages.octave.org/tablicious/
+Url:		https://github.com/apjanke/octave-tablicious/
+Source0:	https://github.com/apjanke/octave-tablicious/archive/v%{version}/%{octpkg}-%{version}.tar.gz
+# (upstream) https://github.com/apjanke/octave-tablicious/pull/95
+Patch0:		b8f123577e1e42fd6f3dc5402df9c65236f532a8.patch
+BuildRequires:  octave-devel >= 4.0.0
 BuildRequires:	octave-statistics >= 1.0.0
 
 Requires:	octave(api) = %{octave_api}
@@ -19,24 +21,22 @@ Requires(post): octave
 Requires(postun): octave
 
 %description
-Tablicious provides tabular/relational data structures for Octave. You can
-think of it as "pandas for Octave".
+Matlab-compatible Octave table class for storing tabular/relational
+data. Similar to R and Python Pandas DataFrames.
 
 %files
 %license COPYING
 #doc NEWS
-%dir %{octpkglibdir}
-%{octpkglibdir}/*
 %dir %{octpkgdir}
 %{octpkgdir}/*
+%dir %{octpkglibdir}
+%{octpkglibdir}/*
+#{_metainfodir}/*.metainfo.xml
 
 #---------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
-
-# remove backup files
-#find . -name \*~ -delete
+%autosetup -p1
 
 %build
 %set_build_flags
