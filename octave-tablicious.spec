@@ -9,8 +9,7 @@ Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/tablicious/
 Url:		https://github.com/apjanke/octave-tablicious/
 Source0:	https://github.com/apjanke/octave-tablicious/archive/v%{version}/%{octpkg}-%{version}.tar.gz
-# (upstream) https://github.com/apjanke/octave-tablicious/pull/95
-Patch0:		b8f123577e1e42fd6f3dc5402df9c65236f532a8.patch
+
 BuildRequires:  octave-devel >= 4.0.0
 BuildRequires:	octave-statistics >= 1.0.0
 
