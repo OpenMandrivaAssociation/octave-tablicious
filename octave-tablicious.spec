@@ -2,8 +2,8 @@
 
 Summary:	A table (relational, tabular data) implementation for GNU Octave 
 Name:		octave-tablicious
-Version:	0.3.6
-Release:	2
+Version:	0.3.7
+Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/tablicious/
