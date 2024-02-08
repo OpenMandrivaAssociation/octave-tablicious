@@ -2,7 +2,7 @@
 
 Summary:	A table (relational, tabular data) implementation for GNU Octave 
 Name:		octave-tablicious
-Version:	0.3.7
+Version:	0.4.2
 Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
